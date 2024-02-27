@@ -1,15 +1,185 @@
 ---
+import Container from "./Container.astro";
 
+import SkillDisplay from "./SkillDisplay.astro";
+import Typescript from "../icons/typescript.astro";
+import Golang from "../icons/golang.astro";
+import Rust from "../icons/rust.astro";
+import Python from "../icons/python.astro";
+import Java from "../icons/java.astro";
+import Lua from "../icons/lua.astro";
+import Bash from "../icons/bash.astro";
+
+import React from "../icons/react.astro";
+import Vue from "../icons/vue.astro";
+import Next from "../icons/next.astro";
+import Nuxt from "../icons/nuxt.astro";
+import Vite from "../icons/vite.astro";
+import AstroIcon from "../icons/astroIcon.astro";
+import Node from "../icons/node.astro";
+
+import Git from "../icons/git.astro";
+import Neovim from "../icons/neovim.astro";
+import Postman from "../icons/postman.astro";
+import Insomnia from "../icons/insomnia.astro";
+import Npm from "../icons/npm.astro";
+import Docker from "../icons/docker.astro";
+
+import Tailwind from "../icons/tailwind.astro";
+import Material from "../icons/material.astro";
+import Element from "../icons/element.astro";
+import Bootstrap from "../icons/bootstrap.astro";
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+import type { SkillChunk } from "../types";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const languages: SkillChunk = {
+  title: t("common.programmingLanguages"),
+  content: [
+    {
+      name: "Typescript",
+      icon: Typescript,
+    },
+    {
+      name: "Go",
+      icon: Golang,
+    },
+    {
+      name: "Rust",
+      icon: Rust,
+    },
+    {
+      name: "Python",
+      icon: Python,
+    },
+    {
+      name: "Java",
+      icon: Java,
+    },
+    {
+      name: "Lua",
+      icon: Lua,
+    },
+  ],
+};
+
+const frameworks: SkillChunk = {
+  title: "Frameworks",
+  content: [
+    {
+      name: "React",
+      icon: React,
+    },
+    {
+      name: "Vue",
+      icon: Vue,
+    },
+    {
+      name: "Next",
+      icon: Next,
+    },
+    {
+      name: "Nuxt",
+      icon: Nuxt,
+    },
+    {
+      name: "Astro",
+      icon: AstroIcon,
+    },
+    {
+      name: "Vite",
+      icon: Vite,
+    },
+    {
+      name: "Node",
+      icon: Node,
+    },
+  ],
+};
+
+const tools: SkillChunk = {
+  title: t("common.tools"),
+  content: [
+    {
+      name: "Git",
+      icon: Git,
+    },
+    {
+      name: "Neovim",
+      icon: Neovim,
+    },
+    {
+      name: "Docker",
+      icon: Docker,
+    },
+    {
+      name: "npm/yarn",
+      icon: Npm,
+    },
+    {
+      name: "Postman",
+      icon: Postman,
+    },
+    {
+      name: "Insomnia",
+      icon: Insomnia,
+    },
+    {
+      name: "Bash/Shell",
+      icon: Bash,
+    },
+  ],
+};
+
+const responsive: SkillChunk = {
+  title: t("common.responsive"),
+  content: [
+    {
+      name: "Tailwind",
+      icon: Tailwind,
+    },
+    {
+      name: "Material",
+      icon: Material,
+    },
+    {
+      name: "Element",
+      icon: Element,
+    },
+    {
+      name: "Bootstrap",
+      icon: Bootstrap,
+    },
+    {
+      name: "Grid",
+    },
+    {
+      name: "Flexbox",
+    },
+    {
+      name: "Mobile first",
+    },
+    {
+      name: "Media queries",
+    },
+  ],
+};
 ---
 
-<section id="skills" class="h-screen bg-blue-400 pt-20">
-  <h1 class="text-5xl text-gray-800">
-    My skills:
-    <ul>
-      <li>Tailwind</li>
-      <li>Typescript</li>
-      <li>React</li>
-      <li>Astro</li>
-    </ul>
-  </h1>
+<section id="skills" class="min-h-screen pt-20">
+  <Container>
+    <div class="py-0">
+      <h1 class="text-4xl text-gray-800 mb-8">My skills</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+        <SkillDisplay {...languages} />
+        <SkillDisplay {...frameworks} />
+        <SkillDisplay {...tools} />
+        <SkillDisplay {...responsive} />
+      </div>
+    </div>
+  </Container>
 </section>
