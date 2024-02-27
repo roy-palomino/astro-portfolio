@@ -1,21 +1,71 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import Container from "./Container.astro";
 
+import Github from "../icons/github.astro";
+import Mail from "../icons/mail.astro";
+import Instagram from "../icons/instagram.astro";
+import Facebook from "../icons/facebook.astro";
+import Linkedin from "../icons/linkedin.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<section id="hero" class="h-screen bg-red-400 pt-20">
-  <div class="m-12 p-6 bg-white rounded-3xl">
-    <div class="flex flex-row">
+<section id="hero" class="pt-20">
+  <Container>
+    <div class="flex flex-row justify-around py-16">
       <div>
-        <img class="h-auto w-96" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fpluspng.com%2Fimg-png%2Fuser-png-icon-young-user-icon-2400.png&f=1&nofb=1&ipt=33953004bf1961578f206cc80f3ef6ab9cb59af1a896e8995d00c30e2a18104b&ipo=images" alt="Roy Palomino Rojas - web dev">
+        <div>
+          <img
+            class="h-auto w-96"
+            src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fpluspng.com%2Fimg-png%2Fuser-png-icon-young-user-icon-2400.png&f=1&nofb=1&ipt=33953004bf1961578f206cc80f3ef6ab9cb59af1a896e8995d00c30e2a18104b&ipo=images"
+            alt="Roy Palomino Rojas - web dev"
+          />
+        </div>
       </div>
-      <div>
-        <h1>Hola, me llamo Roy</h1>
-        <h2>Soy desarrollador Web Full Stack 🚀</h2>
+      <div class="max-w-2xl">
+        <h1 class="text-2xl font-semibold text-gray-700">
+          {t("common.greeting")}
+        </h1>
+        <h2 class="text-7xl mb-8 mt-3 text-gray-600 font-light">
+          {t("common.iAm")} 🚀
+        </h2>
+        <div>
+          <span class="text-lg text-gray-500">{t("common.socials")}</span>
+          <div class="flex flex-row space-x-6 mt-1">
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/roy-palomino-rojas-6770a9184/"
+            >
+              <Linkedin />
+            </a>
+            <a target="_blank" href="https://github.com/roy-palomino">
+              <Github />
+            </a>
+            <a
+              target="_blank"
+              href="https://www.facebook.com/roy.palominorojas"
+            >
+              <Facebook />
+            </a>
+            <a target="_blank" href="https://www.instagram.com/roy_pr06/">
+              <Instagram />
+            </a>
+            <a target="_blank" href="mailto:roy100995@gmail.com">
+              <Mail />
+            </a>
+          </div>
+        </div>
+        <div class="flex flex-row mt-14 space-x-6">
+          <button class="border border-gray-600 px-4 py-2 rounded-xl"
+            >{t("common.talk")}</button
+          >
+          <button class="border border-gray-600 px-4 py-2 rounded-xl"
+            >{t("common.work")}</button
+          >
+        </div>
       </div>
     </div>
-    <hr class="text-black stroke-black bg-black">
-    <div>
-      blah
-    </div>
-  </div>
+  </Container>
 </section>
