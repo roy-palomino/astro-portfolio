@@ -1,0 +1,42 @@
+---
+import type { SkillChunk } from "../types";
+
+interface Props extends SkillChunk {}
+
+const { title, content } = Astro.props;
+---
+
+<div class="z-0">
+  <h2 class="mb-4 font-semibold text-gray-500 text-2xl">{title}</h2>
+  <ol class="relative border-s border-gray-200 dark:border-gray-700">
+    {
+      content.map((item) => (
+        <li class="mb-6 ms-6">
+          <span class="absolute flex items-center justify-center size-6 bg-white rounded-md -start-3 ring-1 ring-white">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-prompt size-6 text-gray-700"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <>
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M5 7l5 5l-5 5" />
+                <path d="M13 17l6 0" />
+              </>
+            </svg>
+          </span>
+          <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900">
+            <span class="mr-2">{item.name}</span> {item.icon && <item.icon />}
+          </h3>
+        </li>
+      ))
+    }
+  </ol>
+</div>
