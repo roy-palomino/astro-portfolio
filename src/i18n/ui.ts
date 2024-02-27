@@ -5,6 +5,23 @@ export const languages = {
 
 export const defaultLang = "en";
 
+// skills: [
+// "Diseño de interfaces",
+// "Desarrollo frontend con SolidJS y React",
+// "Desarrollo backend con Python y Django REST",
+//
+// "Diseño de interfaces con figma",
+// "Desarrolo frontend con Vue, Typescript, Tailwind y Element Plus",
+// "Pruebas manuales",
+// "Soporte y mantenimiento de sistemas nuevos y anteriores",
+// "Comunicación REST API",
+//
+// "Diseño de interfaces con figma",
+// "Desarrollo frontend con React, Typescript y Tailwind",
+// "Comunicación REST API",
+// "Test unitarios y test driven development",
+// ],
+
 export const ui = {
   en: {
     "nav.home": "Home",
@@ -21,6 +38,27 @@ export const ui = {
     "common.programmingLanguages": "Programming languages",
     "common.tools": "Tools",
     "common.responsive": "Responsive design",
+    "title.experience": "Experience",
+    "role.frontend": "Frontend developer",
+    "role.fullstack": "Fullstack developer",
+    "swing.skill.interface": "User interface design",
+    "swing.skill.frontend": "Frontend development with SolidJS and React",
+    "swing.skill.backend": "Backend development with Python and Django REST",
+    "swing.skill.maintenance": "System maintenance",
+    "cfocap.skill.interface": "User inetrface design with Figma",
+    "cfocap.skill.frontend":
+      "Frontend development with Vue, Typescript, Tailwind and Element Plus",
+    "cfocap.skill.manualTest": "Manual testing",
+    "cfocap.skill.unitTest": "Unit testing with Jest",
+    "cfocap.skill.maintenance":
+      "Support and maintenance of new and legacy code with Django and Vue",
+    "cfocap.skill.rest": "REST API Communication",
+    "andap.skill.interface": "User inetrface design with Figma",
+    "andap.skill.frontend":
+      "Frontend development with React, Typescript and Tailwind",
+    "andap.skill.rest": "REST API Communication",
+    "andap.skill.unitTest": "Unit testing with Jest",
+    "andap.skill.tdd": "Test driven development with Jest",
   },
   es: {
     "nav.home": "Inicio",
@@ -37,5 +75,26 @@ export const ui = {
     "common.programmingLanguages": "Lenguajes de programación",
     "common.tools": "Herramientas",
     "common.responsive": "Diseño responsivo",
+    "title.experience": "Experiencia",
+    "role.frontend": "Desarrollador frontend",
+    "role.fullstack": "Desarrollador fullstack",
+    "swing.skill.interface": "Diseño de interfaces",
+    "swing.skill.frontend": "Desarrollo frontend con SolidJS y React",
+    "swing.skill.backend": "Desarrollo backend con Python y Django REST",
+    "swing.skill.maintenance": "Mantenimiento de sistemas",
+    "cfocap.skill.interface": "Diseño de interfaces con figma",
+    "cfocap.skill.frontend":
+      "Desarrolo frontend con Vue, Typescript, Tailwind y Element Plus",
+    "cfocap.skill.manualTest": "Pruebas manuales",
+    "cfocap.skill.unitTest": "Test unitarios con Jest",
+    "cfocap.skill.maintenance":
+      "Soporte y mantenimiento de sistemas nuevos y anteriores con Django y Vue",
+    "cfocap.skill.rest": "Comunicación REST API",
+    "andap.skill.interface": "Diseño de interfaces con figma",
+    "andap.skill.frontend":
+      "Desarrollo frontend con React, Typescript y Tailwind",
+    "andap.skill.rest": "Comunicación REST API",
+    "andap.skill.unitTest": "Tests unitarios con Jest",
+    "andap.skill.tdd": "Desarrollo impulsado por pruebas con Jest",
   },
 } as const;
