@@ -10,15 +10,18 @@ import Contact from "../../components/Contact.astro";
 <Layout title="Roy Palomino - Portafolio">
   <Hero />
   <Skills />
-  <Projects />
   <Experience />
+  <Projects />
   <Contact />
 </Layout>
 
 <style>
   :global(html) {
-    color: hsl(var(--colour-text-hue) var(--colour-text-saturation) var(--colour-text-luminance));
-      scroll-behavior: smooth;
+    color: hsl(
+      var(--colour-text-hue) var(--colour-text-saturation)
+        var(--colour-text-luminance)
+    );
+    scroll-behavior: smooth;
   }
   @media (prefers-reduced-motion: reduce) {
     :global(html) {
