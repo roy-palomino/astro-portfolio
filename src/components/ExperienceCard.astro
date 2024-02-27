@@ -1,0 +1,74 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+interface ExperienceChunk {
+  title: string;
+  role: string;
+  date: string;
+  region?: string;
+  skills: Array<string>;
+}
+
+const experience: Array<ExperienceChunk> = [
+  {
+    title: "Swing Latino",
+    role: t("role.fullstack"),
+    date: "2019 - 2021",
+    skills: [
+      t("swing.skill.frontend"),
+      t("swing.skill.backend"),
+      t("swing.skill.interface"),
+      t("swing.skill.maintenance"),
+    ],
+  },
+  {
+    title: "CFOCAP",
+    role: t("role.frontend"),
+    date: "2021 - 2023",
+    skills: [
+      t("cfocap.skill.interface"),
+      t("cfocap.skill.frontend"),
+      t("cfocap.skill.manualTest"),
+      t("cfocap.skill.unitTest"),
+      t("cfocap.skill.manualTest"),
+      t("cfocap.skill.maintenance"),
+      t("cfocap.skill.rest"),
+    ],
+  },
+  {
+    title: "ANDAP",
+    role: t("role.frontend"),
+    date: "2023 - 2024",
+    skills: [
+      t("andap.skill.interface"),
+      t("andap.skill.frontend"),
+      t("andap.skill.unitTest"),
+      t("andap.skill.tdd"),
+      t("andap.skill.rest"),
+    ],
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200">
+  {
+    experience.map((item) => (
+      <li class="mb-10 ms-4 last:mb-0">
+        <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white" />
+        <div class="flex flex-row mb-1 leading-none text-gray-500 font-normal space-x-3 items-baseline">
+          <span class="text-xl font-semibold">{item.title}</span>
+          <time>{item.date}</time>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900">{item.role}</h3>
+        <ul class="mb-4 text-base font-normal text-gray-500">
+          {item.skills.map((skill) => (
+            <li>- {skill}</li>
+          ))}
+        </ul>
+      </li>
+    ))
+  }
+</ol>
