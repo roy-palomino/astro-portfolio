@@ -1,0 +1,17 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  images?: string[];
+  url?: string;
+}
+
+const props = Astro.props;
+---
+
+<div>
+  <h1>{props.title}</h1>
+  <p>{props.description}</p>
+  {props.images && <img src={props.images[0]} alt={props.title} />}
+  <a href={props.url} target="_blank">Read more</a>
+</div>
