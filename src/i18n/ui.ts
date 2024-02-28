@@ -5,23 +5,6 @@ export const languages = {
 
 export const defaultLang = "en";
 
-// skills: [
-// "Diseño de interfaces",
-// "Desarrollo frontend con SolidJS y React",
-// "Desarrollo backend con Python y Django REST",
-//
-// "Diseño de interfaces con figma",
-// "Desarrolo frontend con Vue, Typescript, Tailwind y Element Plus",
-// "Pruebas manuales",
-// "Soporte y mantenimiento de sistemas nuevos y anteriores",
-// "Comunicación REST API",
-//
-// "Diseño de interfaces con figma",
-// "Desarrollo frontend con React, Typescript y Tailwind",
-// "Comunicación REST API",
-// "Test unitarios y test driven development",
-// ],
-
 export const ui = {
   en: {
     "nav.home": "Home",
@@ -39,6 +22,7 @@ export const ui = {
     "common.tools": "Tools",
     "common.responsive": "Responsive design",
     "title.experience": "Experience",
+    "title.projects": "Projects",
     "role.frontend": "Frontend developer",
     "role.fullstack": "Fullstack developer",
     "swing.skill.interface": "User interface design",
@@ -59,6 +43,14 @@ export const ui = {
     "andap.skill.rest": "REST API Communication",
     "andap.skill.unitTest": "Unit testing with Jest",
     "andap.skill.tdd": "Test driven development with Jest",
+    "project.swing.description": "Inventory and sales software",
+    "project.cfocap.description":
+      "E-learning web application for law professionals",
+    "project.escuela-mujer.description": "Web application for NGO",
+    "project.quilla.description": "Training and conciliation web application",
+    "project.gal.description":
+      "Service provision, legal advice and training web application",
+    "project.andap.description": "E-learning web application",
   },
   es: {
     "nav.home": "Inicio",
@@ -76,6 +68,7 @@ export const ui = {
     "common.tools": "Herramientas",
     "common.responsive": "Diseño responsivo",
     "title.experience": "Experiencia",
+    "title.projects": "Proyectos",
     "role.frontend": "Desarrollador frontend",
     "role.fullstack": "Desarrollador fullstack",
     "swing.skill.interface": "Diseño de interfaces",
@@ -96,5 +89,14 @@ export const ui = {
     "andap.skill.rest": "Comunicación REST API",
     "andap.skill.unitTest": "Tests unitarios con Jest",
     "andap.skill.tdd": "Desarrollo impulsado por pruebas con Jest",
+    "project.swing.description": "Software de inventario y ventas",
+    "project.cfocap.description":
+      "Aplicación web e-learning para profesionales de derecho",
+    "project.escuela-mujer.description": "Aplicación web para ONG",
+    "project.quilla.description":
+      "Aplicación web para formación y capacitación de conciliadores",
+    "project.gal.description":
+      "Aplicación web de prestación de servicios, asesoría legal y capacitaciones",
+    "project.andap.description": "Aplicación web e-learning",
   },
 } as const;
