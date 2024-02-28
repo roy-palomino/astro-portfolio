@@ -1,9 +1,63 @@
 ---
+import Container from "./Container.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import ProjectCard from "./ProjectCard.astro";
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+interface Project {
+  title: string;
+  description: string;
+  images?: string[];
+  url?: string;
+}
+
+const projects: Project[] = [
+  {
+    title: "Swing latino",
+    description: t("project.swing.description"),
+  },
+  {
+    title: "CFOCAP",
+    description: t("project.cfocap.description"),
+    images: ["/images/cfocap.png", "/images/cfocap2.png"],
+    url: "https://www.cfocap.com",
+  },
+  {
+    title: "Escuela mujer",
+    description: t("project.escuela-mujer.description"),
+    images: ["/images/escuela-mujer.png", "/images/escuela-mujer2.png"],
+    url: "https://www.escuelamujer.org",
+  },
+  {
+    title: "QUILLA",
+    description: t("project.quilla.description"),
+    images: ["/images/quilla.png", "/images/quilla2.png"],
+    url: "https://centroquilla.com",
+  },
+  {
+    title: "Grupo GAL",
+    description: t("project.gal.description"),
+    images: ["/images/gal.png", "/images/gal2.png"],
+    url: "https://grupogal.legal",
+  },
+  {
+    title: "ANDAP",
+    description: t("project.andap.description"),
+    images: ["/images/andap.png", "/images/andap2.png"],
+    url: "https://www.andap.edu.pe",
+  },
+];
 ---
 
-<section id="projects" class="h-screen pt-20">
-  <h1 class="text-5xl text-gray-800">
-    My projects
-  </h1>
+<section id="projects" class="min-h-screen pt-20">
+  <Container>
+    <div class="py-0">
+      <h1 class="text-4xl text-gray-800 mb-8">{t("title.projects")}</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+        {projects.map((project) => <ProjectCard {...project} />)}
+      </div>
+    </div>
+  </Container>
 </section>
