@@ -1,35 +1,41 @@
 ---
 import { Icon } from "astro-icon/components";
+
+import { type NavItem } from "../types";
+
+interface Props {
+  items: NavItem[];
+}
+
+const { items } = Astro.props;
 ---
 
 <button
-  id="dropdownDefaultButton"
-  data-dropdown-toggle="dropdown"
+  id="dropdownNavMenu"
+  data-dropdown-toggle="dropdown-menu"
   class="flex flex-row items-center"
 >
-  <Icon class="h-2" name="menu" />
+  <Icon class="size-6 text-primary" name="menu" />
 </button>
 <div
-  id="dropdown"
+  id="dropdown-menu"
   class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
 >
   <ul
     class="py-2 text-sm text-gray-700 dark:text-gray-200"
-    aria-labelledby="dropdownDefaultButton"
+    aria-labelledby="dropdownNavMenu"
   >
-    <li>
-      <a
-        href="#"
-        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-        >English</a
-      >
-    </li>
-    <li>
-      <a
-        href="#"
-        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-        >Español</a
-      >
-    </li>
+    {
+      items.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+          >
+            {item.name}
+          </a>
+        </li>
+      ))
+    }
   </ul>
 </div>
