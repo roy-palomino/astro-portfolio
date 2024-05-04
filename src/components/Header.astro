@@ -1,9 +1,14 @@
 ---
 import NavList from "./NavList.astro";
+import LanguageSelector from "./LanguageSelector.astro";
+
+let isMobile = true;
 ---
 
-<nav>
-  <div>Logo</div>
-  <NavList />
-  <div>Language</div>
+<nav
+  class="flex flex-row w-full max-w-5xl items-center justify-between p-4 shadow-lg"
+>
+  <div class="text-primary font-extrabold">LOGO</div>
+  {!isMobile && <NavList />}
+  <LanguageSelector />
 </nav>
