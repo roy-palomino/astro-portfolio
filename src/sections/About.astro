@@ -1,0 +1,47 @@
+---
+import { useTranslations, getLangFromUrl } from "../i18n/utils";
+
+import SocialPill from "../components/SocialPill.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const socials = [
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/roy-palomino-rojas-6770a9184/",
+  },
+  {
+    name: "GitHub",
+    url: "https://github.com/roy-palomino",
+  },
+  {
+    name: "Facebook",
+    url: "https://www.facebook.com/roy.palominorojas",
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/roy_pr06",
+  },
+];
+---
+
+<div class="flex flex-col space-y-12 px-4 py-16 primary-gradient w-full">
+  <div>
+    <h2 class="text-white text-center text-5xl font-semibold">
+      {t("hero.hi")} Roy Palomino Rojas
+    </h2>
+  </div>
+  <div class="text-smoke font-normal text-lg space-y-6">
+    <p>{t("hero.iAm")}</p>
+    <p>{t("hero.passionate")}</p>
+    <p>{t("hero.curious")}</p>
+  </div>
+  <div class="flex flex-wrap gap-3">
+    {
+      socials.map((social) => (
+        <SocialPill name={social.name} url={social.url} />
+      ))
+    }
+  </div>
+</div>
