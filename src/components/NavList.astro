@@ -1,9 +1,21 @@
+---
+import { type NavItem } from "../types";
+
+interface Props {
+  items: NavItem[];
+}
+
+const { items } = Astro.props;
+---
+
 <nav class="flex flex-row">
   <ul class="flex flex-row">
-    <li>Home</li>
-    <li>Experience</li>
-    <li>Work</li>
-    <li>Skills</li>
-    <li>Contact</li>
+    {
+      items.map((item) => (
+        <li>
+          <a href={item.href}>{item.name}</a>>
+        </li>
+      ))
+    }
   </ul>
 </nav>
