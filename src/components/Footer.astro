@@ -1,1 +1,51 @@
-<div class="text-7xl">This is the footer</div>
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+import { Icon } from "astro-icon/components";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const menuItems = [
+  { name: t("nav.home"), href: "#home" },
+  { name: t("nav.experience"), href: "#experience" },
+  { name: t("nav.work"), href: "#work" },
+  { name: t("nav.skills"), href: "#skills" },
+  { name: t("nav.contact"), href: "#contact" },
+];
+---
+
+<footer class="flex flex-col w-full primary-gradient px-4 py-16 space-y-8">
+  <div class="flex flex-row justify-between">
+    <div>
+      <ul class="flex flex-col space-y-4 text-white font-semibold text-2xl">
+        {
+          menuItems.map((item) => (
+            <li>
+              <a href={item.href}>{item.name}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="flex flex-col justify-center">
+      <a href="#home" class="flex flex-col space-y-2 items-center">
+        <div
+          class="rounded-full bg-white size-16 flex justify-center items-center shadow-md"
+        >
+          <Icon name="arrow-down" class="size-12 text-primary rotate-180" />
+        </div>
+        <span class="text-white font-semibold text-xl"
+          >{t("miscellaneous.goToTop")}</span
+        >
+      </a>
+    </div>
+  </div>
+  <div>
+    <p class="text-white text-sm font-light">
+      © {new Date().getFullYear()} Roy Palomino Rojas. {
+        t("miscellaneous.copyright")
+      }
+    </p>
+  </div>
+</footer>
