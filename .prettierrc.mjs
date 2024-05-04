@@ -5,9 +5,6 @@ export default {
   overrides: [
     {
       files: "*.astro",
-      options: {
-        parser: "astro",
-      },
     },
   ],
 };
