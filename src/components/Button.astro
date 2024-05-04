@@ -1,7 +1,7 @@
 ---
 interface Props {
   text: string;
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "accent";
 }
 
 const { text, variant = "primary" } = Astro.props;
@@ -9,6 +9,7 @@ const { text, variant = "primary" } = Astro.props;
 const classes = {
   primary: "bg-primary border-primary text-white text-xl",
   secondary: "bg-secondary border-secondary text-secondary bg-transparent",
+  accent: "bg-accent border-accent text-white",
 };
 ---
 
