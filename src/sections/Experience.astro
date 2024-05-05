@@ -1,0 +1,61 @@
+---
+import { useTranslations, getLangFromUrl } from "../i18n/utils";
+import Container from "../components/SectionContainer.astro";
+
+import ExperienceDisplayer from "../components/ExperienceDisplayer.astro";
+
+import { type ExperienceItem } from "../types";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const experienceList: ExperienceItem[] = [
+  {
+    company: "ANDAP",
+    year: "2023 - 2024",
+    role: "Full Stack Developer",
+    tasks: [
+      "Figma interface design.",
+      "Frontend development with React, Next, Typescript and Tailwind.",
+      "Rest API Communication with Axios.",
+      "Unit testing with Jest.",
+    ],
+  },
+
+  {
+    company: "CFOCAP",
+    year: "2021 - 2023",
+    role: "Full Stack Developer",
+    tasks: [
+      "Figma interface design.",
+      "Frontend development with Vue, Nuxt, Typescript and Element plus.",
+      "Rest API communication with Axios.",
+      "Manual testing.",
+      "Support and maintenance of legacy systems with Django REST, Vue, Bootstrap and JQuery.",
+    ],
+  },
+  {
+    company: "Swing Latino",
+    year: "2019 - 2020",
+    role: "Full Stack Developer",
+    tasks: [
+      "Interface design",
+      "Frontend development with Solid, React and Bootstrap.",
+      "Backend development with Python and Django.",
+    ],
+  },
+];
+---
+
+<Container bgColorClass="bg-white">
+  <div class="flex flex-col space-y-4">
+    <h2 class="text-secondary text-center text-5xl font-semibold">
+      Experience
+    </h2>
+    <p class="text-lg font-normal text-slate-600">{t("section.experience")}</p>
+  </div>
+
+  <div>
+    <ExperienceDisplayer experienceList={experienceList} />
+  </div>
+</Container>
