@@ -63,6 +63,10 @@ export const ui = {
     "miscellaneous.goToTop": "Go to top",
     "miscellaneous.copyright": "Almost all rights reserved.",
     "miscellaneous.showMore": "Show more",
+    "skill.programmingLanguages": "Programming Languages",
+    "skill.frameworks": "Frameworks",
+    "skill.tools": "Tools",
+    "skill.others": "Responsive",
   },
   es: {
     "nav.home": "Inicio",
@@ -120,5 +124,9 @@ export const ui = {
     "miscellaneous.goToTop": "Volver al inicio",
     "miscellaneous.copyright": "Casi todos los derechos reservados.",
     "miscellaneous.showMore": "Mostrar más",
+    "skill.programmingLanguages": "Lenguajes de Programación",
+    "skill.frameworks": "Frameworks",
+    "skill.tools": "Herramientas",
+    "skill.others": "Responsive",
   },
 } as const;
