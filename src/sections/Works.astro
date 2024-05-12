@@ -1,0 +1,38 @@
+---
+import SectionContainer from "../components/SectionContainer.astro";
+import CompanyCard from "../components/CompanyCard.astro";
+import Button from "../components/Button.astro";
+
+import { useTranslations, getLangFromUrl } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const works = [
+  {
+    title: "ANDAP",
+    description: t("andap.description"),
+    image: import("../images/companies/andap.png"),
+    url: "https://andap.edu.pe",
+  },
+  {
+    title: "Escuela Mujer",
+    description: t("escuelaMujer.description"),
+    image: import("../images/companies/escuela-mujer.jpg"),
+    url: "https://escuelamujer.org",
+  },
+  {
+    title: "Quilla",
+    description: t("quilla.description"),
+    image: import("../images/companies/quilla-bg.jpg"),
+    url: "https://centroquilla.com",
+  },
+];
+---
+
+<SectionContainer title="My Work" description={t("section.work")} bgColorClass="bg-smoke">
+  {works.map((companyWork) => <CompanyCard {...companyWork} />)}
+  <div>
+    <Button variant="accent" text={t("miscellaneous.showMore")}></Button>
+  </div>
+</SectionContainer>
