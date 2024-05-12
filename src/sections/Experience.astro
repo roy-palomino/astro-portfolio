@@ -47,14 +47,7 @@ const experienceList: ExperienceItem[] = [
 ];
 ---
 
-<Container bgColorClass="bg-white">
-  <div class="flex flex-col space-y-4">
-    <h2 class="text-secondary text-center text-5xl font-semibold">
-      Experience
-    </h2>
-    <p class="text-lg font-normal text-slate-600">{t("section.experience")}</p>
-  </div>
-
+<Container title="Experience" description={t("section.experience")} bgColorClass="bg-white">
   <div>
     <ExperienceDisplayer experienceList={experienceList} />
   </div>
