@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  image: ImageMetadata | Promise<any>;
+  title: string;
+  description: string;
+  url: string;
+}
+
+const { image, title, description, url } = Astro.props;
+
+---
+
+<div class="relative rounded-xl">
+  <Image
+    class="transition-all duration-300 hover:opacity-0 rounded-xl"
+    alt="ANDAP logo"
+    src={image}
+    width={1029}
+    height={805}
+  />
+  <div
+    class="absolute inset-0 flex items-center justify-start bg-black bg-opacity-75 opacity-0 left-0 hover:opacity-90 transition-opacity duration-500 rounded-xl"
+  >
+    <div class="flex flex-col text-white text-lg w-full px-8 py-4 text-left space-y-2">
+      <div class="text-4xl text-white font-bold">{title}</div>
+      <p class="text-smoke">{description}</p>
+      <a class="text-right underline font-semibold text-accent text-lg" href={url} target="_blank">Visitar página</a>
+    </div>
+  </div>
+</div>
