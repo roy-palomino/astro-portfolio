@@ -9,3 +9,7 @@
 .primary-gradient {
   @apply bg-gradient-to-r from-[#6E07F3] to-[#6F4BFF];
 }
+
+.secondary-gradient {
+  @apply bg-gradient-to-r from-[#6B9E8E] to-[#6FB7C0];
+}
