@@ -1,7 +1,79 @@
 ---
 import Container from "../components/SectionContainer.astro";
+import SkillCard from "../components/SkillCard.astro";
+
+import { useTranslations, getLangFromUrl } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const programmingLanguages = {
+  title: t("skill.programmingLanguages"),
+  stack: [
+    { name: "TypeScript", icon: "icons8-typescript" },
+    { name: "JavaScript", icon: "icons8-javascript" },
+    { name: "Python", icon: "icons8-python" },
+    { name: "Go", icon: "icons8-golang" },
+    { name: "Rust", icon: "icons8-rust-programming-language" },
+    { name: "Dart", icon: "icons8-dart" },
+    { name: "Java", icon: "icons8-java" },
+    { name: "Lua", icon: "icons8-lua-language" },
+  ],
+};
+
+const frameworks = {
+  title: t("skill.frameworks"),
+  stack: [
+    { name: "React", icon: "icons8-react" },
+    { name: "Vue.js", icon: "icons8-vue-js" },
+    { name: "Next", icon: "icons8-nextjs" },
+    { name: "Nuxt", icon: "icons8-nuxt-js" },
+    { name: "Astro", icon: "icons8-astro" },
+    { name: "Django", icon: "icons8-django" },
+    { name: "Flutter", icon: "icons8-flutter" },
+  ],
+};
+
+const tools = {
+  title: t("skill.tools"),
+  stack: [
+    { name: "Git", icon: "icons8-git" },
+    { name: "Figma", icon: "figma" },
+    { name: "Neovim", icon: "neovim" },
+    { name: "GitHub", icon: "icons8-github" },
+    { name: "Docker", icon: "icons8-docker" },
+    { name: "NPM / Yarn", icon: "icons8-npm" },
+    { name: "Postman", icon: "icons8-postman-api" },
+    { name: "AWS", icon: "icons8-amazon-web-services"},
+    { name: "Bash / Shell", icon: "icons8-bash" },
+  ],
+};
+
+const responsive = {
+  title: t("skill.others"),
+  stack: [
+    { name: "Tailwind CSS", icon: "icons8-tailwind-css" },
+    { name: "Material", icon: "material" },
+    { name: "Bootstrap", icon: "bootstrap" },
+    { name: "Element", icon: "element" },
+    { name: "Materialize", icon: "icons8-material-ui" },
+    { name: "Grid", icon: "grid" },
+    { name: "Mobile first", icon: "mobile" },
+  ],
+};
+
 ---
 
-<Container title="My Skills" bgColorClass="bg-white">
-  <h1>Hello World</h1>
+<Container
+  title={t("title.skills")}
+  description={t("section.skills")}
+  bgColorClass="bg-white"
+>
+  <SkillCard
+    title={programmingLanguages.title}
+    languages={programmingLanguages.stack}
+  />
+  <SkillCard title={frameworks.title} languages={frameworks.stack} />
+  <SkillCard title={tools.title} languages={tools.stack} />
+  <SkillCard title={responsive.title} languages={responsive.stack} />
 </Container>
