@@ -14,17 +14,17 @@ interface Props {
 const { title, languages } = Astro.props;
 ---
 
-<div class="flex flex-col border border-gray-300 rounded-2xl shadow-xl max-w-md">
+<div class="flex flex-col border border-gray-300 rounded-2xl shadow-md max-w-md">
   <div class="py-8 px-6">
     <h3 class="text-secondary text-4xl text-center font-bold">{title}</h3>
   </div>
   <div class="p-6">
-    <ul class="flex flex-wrap flex-row gap-3.5 justify-between">
+    <ul class="flex flex-wrap flex-row gap-5 justify-between">
       {
         languages.map((lang) => (
           <li class="flex flex-col">
-            <Icon class="size-24" name={lang.icon} />
-            <span class="text-center text-slate-500 text-lg font-semibold -mt-2">{lang.name}</span>
+            <Icon class="size-20" name={lang.icon} />
+            <span class="text-center text-slate-500 text-lg font-semibold mt-1 mb-2">{lang.name}</span>
           </li>
         ))
       }
