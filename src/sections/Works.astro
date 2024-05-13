@@ -1,13 +1,14 @@
 ---
 import SectionContainer from "../components/SectionContainer.astro";
 import CompanyCard from "../components/CompanyCard.astro";
-import Button from "../components/Button.astro";
+import Button from "../components/Button";
 
 import { useTranslations, getLangFromUrl } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+// TODO: Add more work items
 const works = [
   {
     title: "ANDAP",
@@ -33,6 +34,8 @@ const works = [
 <SectionContainer title="My Work" description={t("section.work")} bgColorClass="bg-smoke">
   {works.map((companyWork) => <CompanyCard {...companyWork} />)}
   <div>
-    <Button variant="accent" text={t("miscellaneous.showMore")}></Button>
+    <!-- TODO: show more button have to add more items -->
+    <!-- TODO: display show more section only in modile -->
+    <Button variant="accent">{t("miscellaneous.showMore")}</Button>
   </div>
 </SectionContainer>
