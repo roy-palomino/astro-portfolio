@@ -18,19 +18,25 @@ import Contact from "../../sections/Contact.astro";
     <Skills />
     <Contact />
   </Layout>
-</html>
 
-<style>
-  :global(html) {
-    color: hsl(
-      var(--colour-text-hue) var(--colour-text-saturation)
-        var(--colour-text-luminance)
-    );
-    scroll-behavior: smooth;
-  }
-  @media (prefers-reduced-motion: reduce) {
+  <script>
+    import { protectScroll } from "../../utils/scrollHash";
+
+    window.addEventListener("scroll", protectScroll(100));
+  </script>
+
+  <style>
     :global(html) {
-      scroll-behavior: auto;
+      color: hsl(
+        var(--colour-text-hue) var(--colour-text-saturation)
+          var(--colour-text-luminance)
+      );
+      scroll-behavior: smooth;
     }
-  }
-</style>
+    @media (prefers-reduced-motion: reduce) {
+      :global(html) {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</html>
