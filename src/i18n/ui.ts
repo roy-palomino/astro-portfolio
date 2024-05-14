@@ -18,7 +18,8 @@ export const ui = {
     "title.contact": "Contact Me",
     "hero.hello": "Hello, I am",
     "hero.webDev": "Web Developer",
-    "hero.hi": "Hi, I'm",
+    "hero.hi": "Hi!",
+    "hero.myName": "My name is",
     "hero.iAm":
       "I am a web developer with over 6 years of experience building dynamic and scalable web applications.",
     "hero.passionate":
@@ -86,7 +87,8 @@ export const ui = {
     "title.contact": "Contáctame",
     "hero.hello": "Hola, me llamo",
     "hero.webDev": "Desarrollador Web",
-    "hero.hi": "Hola, me llamo",
+    "hero.hi": "Hola!",
+    "hero.myName": "Me llamo",
     "hero.iAm":
       "Soy un desarrollador web con más de 6 años de experiencia construyendo aplicaciones web dinámicas y escalables.",
     "hero.passionate":
