@@ -2,7 +2,7 @@
 import { Icon } from "astro-icon/components";
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
-import Button from "../components/Button.tsx";
+import Button from "../components/Button";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
