@@ -2,10 +2,35 @@
 import Layout from "../../layouts/Default.astro";
 
 import Hero from "../../sections/Hero.astro";
+import About from "../../sections/About.astro";
+import Experience from "../../sections/Experience.astro";
+import Works from "../../sections/Works.astro";
+import Skills from "../../sections/Skills.astro";
+import Contact from "../../sections/Contact.astro";
 ---
 
 <html lang="es">
   <Layout title="Home">
     <Hero />
+    <About />
+    <Experience />
+    <Works />
+    <Skills />
+    <Contact />
   </Layout>
 </html>
+
+<style>
+  :global(html) {
+    color: hsl(
+      var(--colour-text-hue) var(--colour-text-saturation)
+        var(--colour-text-luminance)
+    );
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    :global(html) {
+      scroll-behavior: auto;
+    }
+  }
+</style>
