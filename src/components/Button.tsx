@@ -18,18 +18,28 @@ const classes = {
   accent: "bg-accent border-accent text-white",
 };
 
-const Button: FC<Props> = ({ children, id, variant = "primary", loading = false, type }) => {
+const Button: FC<Props> = ({
+  children,
+  id,
+  type,
+  variant = "primary",
+  loading = false,
+}) => {
   return (
     <button
       id={id}
       type={type}
       className={classNames(
-        "px-8 py-3 border-2 rounded-xl font-semibold text-2xl inline-flex w-auto min-w-52 justify-center items-center",
+        "px-8 py-3 border-2 rounded-xl font-semibold text-2xl inline-flex w-auto min-w-52 justify-center items-center min-h-16",
         classes[variant],
-        loading ? "cursor-not-allowed" : "cursor-pointer"
+        loading ? "cursor-not-allowed" : "cursor-pointer",
       )}
     >
-      {loading ? (<img className="stroke-white animate-spin" src={spinnerIcon.src}></img>) : (children)}
+      {loading ? (
+        <img className="stroke-white animate-spin" src={spinnerIcon.src}></img>
+      ) : (
+        children
+      )}
     </button>
   );
 };
