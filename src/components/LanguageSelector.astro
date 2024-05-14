@@ -4,7 +4,6 @@ import { languages } from "../i18n/ui";
 import { getLangFromUrl } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
-
 ---
 
 <button
@@ -12,8 +11,8 @@ const lang = getLangFromUrl(Astro.url);
   data-dropdown-toggle="dropdown"
   class="flex flex-row items-center"
 >
-<div class="text-primary font-extrabold">{lang.toString().toUpperCase()}</div>
-  <Icon class="size-3" name="arrow" />
+  <div class="text-primary font-extrabold">{lang.toString().toUpperCase()}</div>
+  <Icon class="size-3 mt-0.5 ml-1" name="arrow" />
 </button>
 <div
   id="dropdown"
@@ -23,14 +22,17 @@ const lang = getLangFromUrl(Astro.url);
     class="py-2 text-sm text-gray-700 dark:text-gray-200"
     aria-labelledby="dropdownDefaultButton"
   >
-  {Object.entries(languages).map(([lang, label]) => (
-    <li>
-      <a
-        href={`/${lang}`}
-        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-        >{label}</a
-      >
-    </li>
-  ))}
+    {
+      Object.entries(languages).map(([lang, label]) => (
+        <li>
+          <a
+            href={`/${lang}`}
+            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+          >
+            {label}
+          </a>
+        </li>
+      ))
+    }
   </ul>
 </div>
