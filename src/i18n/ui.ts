@@ -126,7 +126,7 @@ export const ui = {
     "escuelaMujer.description":
       "ONG que brinda capacitaciones y talleres con certificación, fomentando el desarrollo personal y profesional de las asistentes. Un espacio de aprendizaje y crecimiento enfocado en potenciar las habilidades femeninas.",
     "quilla.description":
-      "Ofrece una sólida formación teórica y práctica a futuros conciliadores extrajudiciales. Su equipo de profesionales calificados imparte las enseñanzas con proactividad, optimismo y compromiso, garantizando una capacitación de calidad para los estudiantes.",
+      "Ofrece una sólida formación teórica y práctica a futuros conciliadores extrajudiciales. Su equipo calificado imparte las enseñanzas con proactividad, optimismo y compromiso, garantizando una capacitación de calidad a sus estudiantes.",
     "gal.description":
       "Este grupo se propuso crear un espacio dedicado a garantizar el acceso a la justicia para todos los ciudadanos.Realizan una defensa efectiva, informando a los usuarios sobre las posibilidades reales de cada caso. Además de la asesoría legal, brindan capacitaciones especializadas.",
     "miscellaneous.goToTop": "Volver al inicio",
