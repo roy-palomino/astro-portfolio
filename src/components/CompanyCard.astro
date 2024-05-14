@@ -22,11 +22,11 @@ const { image, title, description, url } = Astro.props;
     height={805}
   />
   <div
-    class="absolute inset-0 flex items-center justify-start bg-black bg-opacity-75 opacity-0 left-0 hover:opacity-90 transition-opacity duration-500 rounded-xl"
+    class="absolute inset-0 flex items-center justify-start bg-black bg-opacity-75 opacity-0 left-0 hover:opacity-95 transition-opacity duration-500 rounded-xl"
   >
     <div class="flex flex-col text-white text-lg w-full px-8 py-4 text-left space-y-2">
       <div class="text-4xl text-white font-bold">{title}</div>
-      <p class="text-smoke">{description}</p>
+      <p class="text-smoke leading-[1.3rem]">{description}</p>
       <a class="text-right underline font-semibold text-accent text-lg" href={url} target="_blank">Visitar página</a>
     </div>
   </div>
