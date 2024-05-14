@@ -3,8 +3,8 @@
   width="32"
   height="32"
   viewBox="0 0 128 128"
-  ><defs
-    ><linearGradient
+  ><defs>
+  <linearGradient
       id="deviconNeovim0"
       x1=".5"
       x2=".5"
@@ -42,13 +42,13 @@
     ></defs
   ><g fill-rule="evenodd"
     ><path
-      fill="url(#deviconNeovim0)"
+      fill="#58a733"
       d="M.426 33.703L33.383.426v154.722L.426 122.258Zm0 0"
       transform="translate(10.95 -.352)scale(.82614)"></path><path
-      fill="url(#deviconNeovim1)"
+      fill="#1365a4"
       d="M127.773 34L94.406.426l.676 154.722L128 122.254Zm0 0"
       transform="translate(10.95 -.352)scale(.82614)"></path><path
-      fill="url(#deviconNeovim2)"
+      fill="#1292dd"
       d="m33.379.637l85.691 130.75l-23.98 23.976L9.355 24.903Zm0 0"
       transform="translate(10.95 -.352)scale(.82614)"></path><path
       fill-opacity="0.129"
