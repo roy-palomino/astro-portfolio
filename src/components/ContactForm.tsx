@@ -43,6 +43,7 @@ const MyComponent: FC<Props> = () => {
     resolver: yupResolver(schema),
   });
   const onSubmit = async (data: Inputs) => {
+    setLoading(true);
     const serviceId = import.meta.env.PUBLIC_SERVICE_ID;
     const templateId = import.meta.env.PUBLIC_TEMPLATE_ID;
     const userId = import.meta.env.PUBLIC_USER_ID;
@@ -70,7 +71,7 @@ const MyComponent: FC<Props> = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(data),
+          body: JSON.stringify(payload),
         },
       );
 
@@ -81,6 +82,8 @@ const MyComponent: FC<Props> = () => {
       }
     } catch (error) {
       console.error("Error:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
