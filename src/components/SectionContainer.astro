@@ -3,23 +3,47 @@ interface Props {
   title?: string;
   description?: string;
   bgColorClass?: string;
+  titleColor?: string;
+  descriptionColor?: string;
+  id?: string;
 }
 
-const { title, description, bgColorClass = "bg-white" } = Astro.props;
+const {
+  title,
+  description,
+  bgColorClass = "bg-white",
+  titleColor,
+  descriptionColor,
+  id,
+} = Astro.props;
 ---
 
-<div class:list={[bgColorClass, "flex flex-col space-y-12 px-4 py-16"]}>
+<section id={id} class:list={[bgColorClass, "flex flex-col space-y-12 px-4 py-16"]}>
   {
     title && (
-      <h2 class="text-accent text-center text-5xl font-semibold">{title}</h2>
+      <h2
+        class:list={[
+          "text-center text-5xl font-semibold",
+          titleColor || "text-accent",
+        ]}
+      >
+        {title}
+      </h2>
     )
   }
   {
     description && (
-      <p class="text-lg font-normal text-slate-600">{description}</p>
+      <p
+        class:list={[
+          "text-lg font-normal",
+          descriptionColor || "text-slate-600",
+        ]}
+      >
+        {description}
+      </p>
     )
   }
   <div class="flex flex-col space-y-12 items-center">
     <slot />
   </div>
-</div>
+</section>
