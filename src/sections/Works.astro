@@ -31,7 +31,7 @@ const works = [
 ];
 ---
 
-<SectionContainer title="My Work" description={t("section.work")} bgColorClass="bg-smoke">
+<SectionContainer id="work" title="My Work" description={t("section.work")} bgColorClass="bg-smoke">
   {works.map((companyWork) => <CompanyCard {...companyWork} />)}
   <div>
     <!-- TODO: show more button have to add more items -->
