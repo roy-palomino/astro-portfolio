@@ -13,9 +13,9 @@ const { image, title, description, url } = Astro.props;
 
 ---
 
-<div class="relative rounded-xl">
+<div class="relative rounded-xl min-h-72">
   <Image
-    class="transition-all duration-300 hover:opacity-0 rounded-xl"
+    class="transition-all duration-300 hover:opacity-0 rounded-xl min-h-72 object-cover"
     alt="ANDAP logo"
     src={image}
     width={1029}
