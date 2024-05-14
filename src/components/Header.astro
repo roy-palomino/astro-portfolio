@@ -1,4 +1,6 @@
 ---
+import { Icon } from "astro-icon/components";
+
 import NavList from "./NavList.astro";
 import LanguageSelector from "./LanguageSelector.astro";
 import MenuButton from "./MenuButton.astro";
@@ -17,7 +19,7 @@ const menuItems = [
 <nav
   class="flex flex-row w-full max-w-5xl items-center justify-between p-4 bg-white shadow-lg fixed z-20 top-0 start-0 border-b border-gray-200 "
 >
-  <div class="text-primary font-extrabold text-xl">LOGO</div>
+<Icon name="portfolio-logo" class="w-20 h-auto"></Icon>
   {!isMobile && <NavList items={menuItems} />}
   <div class="flex flex-row items-center space-x-3">
     <LanguageSelector />
