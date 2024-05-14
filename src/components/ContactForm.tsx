@@ -43,6 +43,7 @@ const MyComponent: FC<Props> = () => {
     resolver: yupResolver(schema),
   });
   const onSubmit = async (data: Inputs) => {
+    if (loading) return;
     setLoading(true);
     const serviceId = import.meta.env.PUBLIC_SERVICE_ID;
     const templateId = import.meta.env.PUBLIC_TEMPLATE_ID;
