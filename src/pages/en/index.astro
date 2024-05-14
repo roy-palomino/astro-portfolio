@@ -19,3 +19,18 @@ import Contact from "../../sections/Contact.astro";
     <Contact />
   </Layout>
 </html>
+
+<style>
+  :global(html) {
+    color: hsl(
+      var(--colour-text-hue) var(--colour-text-saturation)
+        var(--colour-text-luminance)
+    );
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    :global(html) {
+      scroll-behavior: auto;
+    }
+  }
+</style>
