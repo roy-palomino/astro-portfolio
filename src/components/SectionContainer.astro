@@ -18,12 +18,12 @@ const {
 } = Astro.props;
 ---
 
-<section id={id} class:list={[bgColorClass, "flex flex-col space-y-12 px-4 py-16"]}>
+<section id={id} class:list={[bgColorClass, "flex flex-col space-y-12 px-4 py-16 items-center"]}>
   {
     title && (
       <h2
         class:list={[
-          "text-center text-5xl font-semibold",
+          "text-center text-5xl font-semibold md:text-6xl",
           titleColor || "text-accent",
         ]}
       >
@@ -35,7 +35,7 @@ const {
     description && (
       <p
         class:list={[
-          "text-lg font-normal",
+          "text-lg font-normal md:text-xl md:max-w-xl",
           descriptionColor || "text-slate-600",
         ]}
       >
