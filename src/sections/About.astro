@@ -34,21 +34,21 @@ const socials = [
   class="flex flex-col space-y-12 px-4 py-16 primary-gradient w-full items-center"
 >
   <div class="inline-flex flex-col">
-    <p class="text-smoke text-2xl">
+    <p class="text-smoke text-2xl md:text-xl md:text-center">
       {t("hero.myName")}
     </p>
     <h2
-      class="text-white text-4xl font-semibold"
+      class="text-white text-4xl md:text-5xl font-semibold"
     >
       Roy Palomino Rojas
     </h2>
   </div>
-  <div class="text-smoke font-normal text-lg space-y-6">
+  <div class="text-smoke font-normal text-lg md:text-xl space-y-6 max-w-xl">
     <p>{t("hero.iAm")}</p>
     <p>{t("hero.passionate")}</p>
     <p>{t("hero.curious")}</p>
   </div>
-  <div class="flex flex-wrap gap-3">
+  <div class="flex flex-wrap gap-3 w-full max-w-xl md:justify-between">
     {
       socials.map((social) => (
         <SocialPill name={social.name} url={social.url} />
