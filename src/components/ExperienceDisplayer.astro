@@ -19,7 +19,7 @@ const { experienceList } = Astro.props;
             {experience.year}
           </time>
         </div>
-        <h3 class="text-xl font-bold text-secondary-hover mb-3.5 md:text-2xl">{experience.role}</h3>
+        <p class="text-xl font-bold text-secondary-hover mb-3.5">{experience.role}</p>
         <ul class="font-normal text-lg md:text-xl">
           {experience.tasks.map((task) => (
             <li class="list-disc ml-4 text-slate-600">{task}</li>
