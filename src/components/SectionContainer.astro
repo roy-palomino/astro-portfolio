@@ -18,31 +18,39 @@ const {
 } = Astro.props;
 ---
 
-<section id={id} class:list={[bgColorClass, "flex flex-col space-y-12 px-4 py-16 items-center"]}>
-  {
-    title && (
-      <h2
-        class:list={[
-          "text-center text-5xl font-semibold md:text-6xl",
-          titleColor || "text-accent",
-        ]}
-      >
-        {title}
-      </h2>
-    )
-  }
-  {
-    description && (
-      <p
-        class:list={[
-          "text-lg font-normal md:text-xl md:max-w-xl",
-          descriptionColor || "text-slate-600",
-        ]}
-      >
-        {description}
-      </p>
-    )
-  }
+<section
+  id={id}
+  class:list={[
+    bgColorClass,
+    "flex flex-col space-y-12 px-4 py-16 items-center",
+  ]}
+>
+  <div class="flex flex-col">
+    {
+      title && (
+        <h2
+          class:list={[
+            "text-center text-5xl font-semibold mb-6 md:text-6xl",
+            titleColor || "text-accent",
+          ]}
+        >
+          {title}
+        </h2>
+      )
+    }
+    {
+      description && (
+        <p
+          class:list={[
+            "text-lg font-normal md:text-xl md:max-w-xl",
+            descriptionColor || "text-slate-600",
+          ]}
+        >
+          {description}
+        </p>
+      )
+    }
+  </div>
   <div class="flex flex-col w-full space-y-12 items-center">
     <slot />
   </div>
