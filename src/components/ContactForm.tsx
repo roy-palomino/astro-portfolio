@@ -168,7 +168,7 @@ const MyComponent: FC<Props> = () => {
           </p>
         </div>
         <div className="flex flex-row w-full justify-center">
-          <Button loading={loading}>{t("title.contact")}</Button>
+          <Button className="md:mt-6" loading={loading}>{t("title.contact")}</Button>
         </div>
       </form>
     </>
