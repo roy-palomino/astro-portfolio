@@ -6,6 +6,7 @@ interface Props extends HTMLAttributes<HTMLButtonElement> {
   loading?: boolean;
   variant?: "primary" | "secondary" | "accent";
   type?: "button" | "submit" | "reset";
+  className?: string;
 }
 
 function classNames(...classes: Array<string>) {
@@ -24,6 +25,7 @@ const Button: FC<Props> = ({
   type,
   variant = "primary",
   loading = false,
+  className = "",
 }) => {
   return (
     <button
@@ -33,6 +35,7 @@ const Button: FC<Props> = ({
         "px-8 py-3 border-2 rounded-xl font-semibold text-2xl inline-flex w-auto min-w-52 justify-center items-center min-h-16",
         classes[variant],
         loading ? "cursor-not-allowed" : "cursor-pointer",
+        className,
       )}
     >
       {loading ? (
