@@ -105,7 +105,7 @@ const MyComponent: FC<Props> = () => {
       <form
         onSubmit={handleSubmit(onSubmit)}
         id="contact-form"
-        className="max-w-lg w-full flex flex-col space-y-10"
+        className="max-w-lg w-full flex flex-col space-y-10 md:max-w-xl"
       >
         <div className="relative">
           <label
