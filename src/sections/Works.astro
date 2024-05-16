@@ -32,10 +32,10 @@ const works = [
 ---
 
 <SectionContainer id="work" title={t("title.work")} description={t("section.work")} bgColorClass="bg-smoke">
-  {works.map((companyWork) => <CompanyCard {...companyWork} />)}
+  <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+    {works.map((companyWork) => <CompanyCard {...companyWork} />)}
+  </div>
   <div>
-    <!-- TODO: show more button have to add more items -->
-    <!-- TODO: display show more section only in modile -->
-    <Button variant="accent">{t("miscellaneous.showMore")}</Button>
+    <Button className="md:hidden" variant="accent">{t("miscellaneous.showMore")}</Button>
   </div>
 </SectionContainer>
