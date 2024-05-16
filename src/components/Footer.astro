@@ -15,38 +15,40 @@ const menuItems = [
 ];
 ---
 
-<footer class="flex flex-col w-full primary-gradient px-4 py-16 space-y-8">
-  <div class="flex flex-row justify-between">
-    <div>
-      <ul class="flex flex-col space-y-4 text-white font-semibold text-2xl">
-        {
-          menuItems.map((item) => (
-            <li>
-              <a href={item.href}>{item.name}</a>
-            </li>
-          ))
+<footer class="w-full primary-gradient">
+  <div class="flex flex-col px-4 py-16 space-y-8 md:max-w-xl mx-auto">
+    <div class="flex flex-row justify-between">
+      <div>
+        <ul class="flex flex-col space-y-4 text-white font-semibold text-2xl">
+          {
+            menuItems.map((item) => (
+              <li>
+                <a href={item.href}>{item.name}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="flex flex-col justify-center">
+        <a href="#home" class="flex flex-col space-y-2 items-center">
+          <div
+            class="rounded-full bg-white size-16 flex justify-center items-center shadow-md"
+          >
+            <Icon name="arrow-down" class="size-12 text-primary rotate-180" />
+          </div>
+          <span class="text-white font-semibold text-xl"
+            >{t("miscellaneous.goToTop")}</span
+          >
+        </a>
+      </div>
+    </div>
+    <div class="flex flex-col space-y-1 text-white font-light md:space-y-2">
+      <p>
+        © {new Date().getFullYear()} Roy Palomino Rojas. {
+          t("miscellaneous.copyright")
         }
-      </ul>
+      </p>
+      <p>Icons by <a href="https://icons8.com" target="_blank">Icons8</a></p>
     </div>
-    <div class="flex flex-col justify-center">
-      <a href="#home" class="flex flex-col space-y-2 items-center">
-        <div
-          class="rounded-full bg-white size-16 flex justify-center items-center shadow-md"
-        >
-          <Icon name="arrow-down" class="size-12 text-primary rotate-180" />
-        </div>
-        <span class="text-white font-semibold text-xl"
-          >{t("miscellaneous.goToTop")}</span
-        >
-      </a>
-    </div>
-  </div>
-  <div class="flex flex-col space-y-1 text-white text-sm font-light">
-    <p>
-      © {new Date().getFullYear()} Roy Palomino Rojas. {
-        t("miscellaneous.copyright")
-      }
-    </p>
-    <p>Icons by <a href="https://icons8.com" target="_blank">Icons8</a></p>
   </div>
 </footer>
