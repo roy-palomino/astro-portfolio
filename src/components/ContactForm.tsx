@@ -105,12 +105,12 @@ const MyComponent: FC<Props> = () => {
       <form
         onSubmit={handleSubmit(onSubmit)}
         id="contact-form"
-        className="max-w-lg w-full flex flex-col space-y-10 md:max-w-xl"
+        className="max-w-lg w-full flex flex-col space-y-8 md:max-w-xl"
       >
         <div className="relative">
           <label
             htmlFor="name"
-            className="block mb-2 text-lg font-medium text-white"
+            className="block mb-2 text-lg font-semibold text-white"
           >
             {t("form.name")}
           </label>
@@ -130,7 +130,7 @@ const MyComponent: FC<Props> = () => {
         <div>
           <label
             htmlFor="email"
-            className="block mb-2 text-lg font-medium text-white"
+            className="block mb-2 text-lg font-semibold text-white"
           >
             {t("form.email")}
           </label>
@@ -150,7 +150,7 @@ const MyComponent: FC<Props> = () => {
         <div>
           <label
             htmlFor="message"
-            className="block mb-2 text-lg font-medium text-white"
+            className="block mb-2 text-lg font-semibold text-white"
           >
             {t("form.idea")}
           </label>
@@ -168,7 +168,7 @@ const MyComponent: FC<Props> = () => {
           </p>
         </div>
         <div className="flex flex-row w-full justify-center">
-          <Button className="md:mt-6" loading={loading}>{t("title.contact")}</Button>
+          <Button className="md:mt-2" loading={loading}>{t("title.contact")}</Button>
         </div>
       </form>
     </>
