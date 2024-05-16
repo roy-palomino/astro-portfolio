@@ -43,7 +43,7 @@ const tools = {
     { name: "Docker", icon: "icons8-docker" },
     { name: "NPM / Yarn", icon: "icons8-npm" },
     { name: "Postman", icon: "icons8-postman-api" },
-    { name: "AWS", icon: "icons8-amazon-web-services"},
+    { name: "AWS", icon: "icons8-amazon-web-services" },
     { name: "Bash / Shell", icon: "icons8-bash" },
   ],
 };
@@ -60,7 +60,6 @@ const responsive = {
     { name: "Mobile first", icon: "mobile" },
   ],
 };
-
 ---
 
 <Container
@@ -69,11 +68,13 @@ const responsive = {
   description={t("section.skills")}
   bgColorClass="bg-white"
 >
-  <SkillCard
-    title={programmingLanguages.title}
-    languages={programmingLanguages.stack}
-  />
-  <SkillCard title={frameworks.title} languages={frameworks.stack} />
-  <SkillCard title={tools.title} languages={tools.stack} />
-  <SkillCard title={responsive.title} languages={responsive.stack} />
+  <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+    <SkillCard
+      title={programmingLanguages.title}
+      languages={programmingLanguages.stack}
+    />
+    <SkillCard title={frameworks.title} languages={frameworks.stack} />
+    <SkillCard title={tools.title} languages={tools.stack} />
+    <SkillCard title={responsive.title} languages={responsive.stack} />
+  </div>
 </Container>
