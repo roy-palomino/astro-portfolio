@@ -110,14 +110,14 @@ const MyComponent: FC<Props> = () => {
         <div className="relative">
           <label
             htmlFor="name"
-            className="block mb-2 text-lg font-semibold text-white lg:text-2xl lg:font-normal"
+            className="block mb-2 text-lg text-white lg:text-xl"
           >
             {t("form.name")}
           </label>
           <input
             type="text"
             id="name"
-            className="bg-green-50 border border-green-500 text-green-900 placeholder-green-400 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 lg:text-xl"
+            className="bg-green-50 border border-green-500 text-green-900 placeholder-green-400 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 lg:text-lg"
             placeholder="Jane Doe"
             {...register("name", { required: true })}
           />
@@ -130,14 +130,14 @@ const MyComponent: FC<Props> = () => {
         <div>
           <label
             htmlFor="email"
-            className="block mb-2 text-lg font-semibold text-white lg:text-2xl lg:font-normal"
+            className="block mb-2 text-lg text-white lg:text-xl"
           >
             {t("form.email")}
           </label>
           <input
             type="email"
             id="email"
-            className="bg-red-50 border border-red-500 text-red-900 placeholder-green-400 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 lg:text-xl"
+            className="bg-red-50 border border-red-500 text-red-900 placeholder-green-400 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 lg:text-lg"
             placeholder="example@mail.com"
             {...register("email", { required: true })}
           />
@@ -150,13 +150,13 @@ const MyComponent: FC<Props> = () => {
         <div>
           <label
             htmlFor="message"
-            className="block mb-2 text-lg font-semibold text-white lg:text-2xl lg:font-normal"
+            className="block mb-2 text-lg text-white lg:text-xl"
           >
             {t("form.idea")}
           </label>
           <textarea
             id="message"
-            className="bg-red-50 h-32 border border-red-500 text-red-900 placeholder-green-400 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 lg:text-xl"
+            className="bg-red-50 h-32 border border-red-500 text-red-900 placeholder-green-400 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 lg:text-lg"
             placeholder="Leave a message..."
             {...register("message", { required: true })}
           ></textarea>

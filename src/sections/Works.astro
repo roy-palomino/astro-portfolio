@@ -38,7 +38,13 @@ const works = [
   bgColorClass="bg-smoke"
 >
   <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-    {works.map((companyWork) => <CompanyCard {...companyWork} />)}
+    {
+      works.map((companyWork) => (
+        <CompanyCard
+          {...{ ...companyWork, visitPage: t("miscellaneous.visitPage") }}
+        />
+      ))
+    }
   </div>
   <div>
     <Button className="md:hidden" variant="accent"

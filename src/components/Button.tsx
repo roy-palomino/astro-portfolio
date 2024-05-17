@@ -32,7 +32,7 @@ const Button: FC<Props> = ({
       id={id}
       type={type}
       className={classNames(
-        "px-8 py-3 border-2 rounded-xl font-semibold text-2xl inline-flex w-auto min-w-52 justify-center items-center min-h-16",
+        "px-8 py-3 border-2 rounded-xl font-semibold text-2xl inline-flex w-auto min-w-52 justify-center items-center min-h-16 lg:font-normal",
         classes[variant],
         loading ? "cursor-not-allowed" : "cursor-pointer",
         className,

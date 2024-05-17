@@ -13,7 +13,7 @@ const url = Astro.url.searchParams;
   <ul class="flex flex-row gap-8">
     {
       items.map((item) => (
-        <li class="text-primary font-bold text-xl">
+        <li class="text-primary text-xl">
           <a href={item.href}>{item.name}</a>
         </li>
       ))
@@ -35,7 +35,7 @@ const url = Astro.url.searchParams;
       const navItemHash = navItems[i]
         .getElementsByTagName("a")[0]
         .href.slice(navItems[i].getElementsByTagName("a")[0].href.indexOf("#"));
-      const decorationClass = ["underline", "underline-offset-4", "!text-secondary", "decoration-2"]
+      const decorationClass = ["underline", "underline-offset-4", "!text-secondary", "decoration-2", "font-semibold"]
       if (navItemHash === currentHash) {
         navItems[i].classList.add(...decorationClass);
       } else {
