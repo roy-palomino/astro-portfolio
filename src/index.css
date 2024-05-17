@@ -7,9 +7,13 @@
 }
 
 .primary-gradient {
-  @apply bg-gradient-to-r from-[#6E07F3] to-[#6F4BFF];
+  @apply bg-gradient-to-r from-[#6E07F3] to-[#6F4BFF] lg:from-[#5A00E0] lg:to-[#8A6CFF];
 }
 
 .secondary-gradient {
-  @apply bg-gradient-to-r from-[#6B9E8E] to-[#6FB7C0];
+  @apply bg-gradient-to-r from-[#6B9E8E] to-[#6FB7C0]  lg:from-[#4D8C73] lg:to-[#7FC9D6];
+}
+
+.strong-secondary-gradient {
+  @apply bg-gradient-to-r from-[#4D8C73] to-[#7FC9D6];
 }
