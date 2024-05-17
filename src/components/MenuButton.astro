@@ -13,7 +13,7 @@ const { items } = Astro.props;
 <button
   id="dropdownNavMenu"
   data-dropdown-toggle="dropdown-menu"
-  class="flex flex-row items-center"
+  class="flex lg:hidden flex-row items-center"
 >
   <Icon class="size-6 text-primary" name="menu" />
 </button>
@@ -30,7 +30,7 @@ const { items } = Astro.props;
         <li>
           <a
             href={item.href}
-            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+            class="block px-4 py-2 hover:bg-gray-100 text-lg text-slate-600 hover:text-primary"
           >
             {item.name}
           </a>
