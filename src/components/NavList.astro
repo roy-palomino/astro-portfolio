@@ -6,16 +6,44 @@ interface Props {
 }
 
 const { items } = Astro.props;
+const url = Astro.url.searchParams;
 ---
 
-<nav class="flex flex-row">
-  <ul class="flex flex-row">
+<nav class="hidden lg:flex flex-row">
+  <ul class="flex flex-row gap-8">
     {
       items.map((item) => (
-        <li>
-          <a href={item.href}>{item.name}</a>>
+        <li class="text-primary font-bold text-xl">
+          <a href={item.href}>{item.name}</a>
         </li>
       ))
     }
+    {url.toString()}
   </ul>
 </nav>
+
+<script>
+  function handleUrlChange() {
+    let navItems = document
+      .getElementsByTagName("nav")[0]
+      .getElementsByTagName("ul")[0]
+      .getElementsByTagName("li");
+
+    const currentHash = window.location.hash;
+
+    for (let i = 0; i < navItems.length; i++) {
+      const navItemHash = navItems[i]
+        .getElementsByTagName("a")[0]
+        .href.slice(navItems[i].getElementsByTagName("a")[0].href.indexOf("#"));
+      const decorationClass = ["underline", "underline-offset-4", "!text-secondary", "decoration-2"]
+      if (navItemHash === currentHash) {
+        navItems[i].classList.add(...decorationClass);
+      } else {
+        navItems[i].classList.remove(...decorationClass);
+      }
+    }
+  }
+
+  document.addEventListener("scroll", handleUrlChange);
+  document.addEventListener("DOMContentLoaded", handleUrlChange);
+</script>
