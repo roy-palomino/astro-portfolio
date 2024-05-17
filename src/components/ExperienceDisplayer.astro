@@ -11,18 +11,22 @@ const { experienceList } = Astro.props;
 <ol class="relative border-s border-accent dark:border-gray-700">
   {
     experienceList.map((experience) => (
-      <li class="mb-12 ms-4">
+      <li class="mb-12 ms-4 lg:ms-8 lg:mb-20">
         <div class="absolute w-3 h-3 bg-accent rounded-full mt-1.5 -start-1.5 border-white" />
         <div class="flex flex-row items-center space-x-6">
-          <h3 class="text-2xl text-primary font-bold md:text-3xl">{experience.company}</h3>
-          <time class="text-lg font-normal leading-none text-slate-500 md:text-xl">
+          <h3 class="text-2xl text-primary font-bold md:text-3xl lg:text-4xl">
+            {experience.company}
+          </h3>
+          <time class="text-lg font-normal leading-none text-slate-500 md:text-xl lg:text-3xl lg:text-slate-400">
             {experience.year}
           </time>
         </div>
-        <p class="text-xl font-bold text-secondary-hover mb-3.5">{experience.role}</p>
-        <ul class="font-normal text-lg md:text-xl">
+        <p class="text-xl font-bold text-secondary-hover mb-3.5 lg:text-2xl lg:mb-5">
+          {experience.role}
+        </p>
+        <ul class="font-normal text-lg md:text-xl lg:text-2xl">
           {experience.tasks.map((task) => (
-            <li class="list-disc ml-4 text-slate-600">{task}</li>
+            <li class="list-disc ml-4 text-slate-600 lg:text-slate-500 lg:ml-6 lg:mb-2">{task}</li>
           ))}
         </ul>
       </li>
