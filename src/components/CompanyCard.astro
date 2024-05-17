@@ -8,13 +8,16 @@ interface Props {
   description: string;
   url: string;
   visitPage: string;
+  id?: string | number;
 }
 
-const { image, title, description, url, visitPage } = Astro.props;
-
+const { image, title, description, url, visitPage, id } = Astro.props;
 ---
 
-<div class="relative rounded-xl min-h-72 max-w-md md:max-w-sm col-span-1 z-20">
+<div
+  id={id + ""}
+  class="company-card relative rounded-xl min-h-72 max-w-md md:max-w-sm col-span-1 z-20"
+>
   <Image
     class="transition-all duration-300 hover:opacity-0 rounded-xl min-h-72 object-cover"
     alt="ANDAP logo"
