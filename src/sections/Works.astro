@@ -8,7 +8,6 @@ import { useTranslations, getLangFromUrl } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-// TODO: Add more work items
 const works = [
   {
     title: "ANDAP",
@@ -57,16 +56,51 @@ const works = [
 >
   <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
     {
-      works.map((companyWork) => (
+      works.map((companyWork, idx) => (
         <CompanyCard
+          id={idx}
           {...{ ...companyWork, visitPage: t("miscellaneous.visitPage") }}
         />
       ))
     }
   </div>
   <div>
-    <Button className="md:hidden" variant="accent"
+    <Button id="show-more" className="md:hidden" variant="accent"
       >{t("miscellaneous.showMore")}</Button
     >
   </div>
 </SectionContainer>
+
+<script>
+  function showMore() {
+    const cards = document.querySelectorAll(".company-card");
+    cards.forEach((card, idx) => {
+      if (idx > 2) {
+        card.classList.remove("hidden");
+      }
+    });
+  }
+
+  function showThreeCards() {
+    const cards = document.querySelectorAll(".company-card");
+    cards.forEach((card, idx) => {
+      if (idx > 2) {
+        card.classList.add("hidden", "md:flex");
+      }
+    });
+  }
+
+  function hideMoreButton() {
+    const button = document.getElementById("show-more");
+    button?.classList.add("hidden");
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    showThreeCards();
+  });
+
+  document.getElementById("show-more")?.addEventListener("click", () => {
+    showMore();
+    hideMoreButton();
+  });
+</script>
