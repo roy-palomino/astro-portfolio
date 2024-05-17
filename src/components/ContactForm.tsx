@@ -105,24 +105,24 @@ const MyComponent: FC<Props> = () => {
       <form
         onSubmit={handleSubmit(onSubmit)}
         id="contact-form"
-        className="max-w-lg w-full flex flex-col space-y-8 md:max-w-xl"
+        className="max-w-lg w-full flex flex-col space-y-8 md:max-w-xl lg:max-w-2xl lg:space-y-12"
       >
         <div className="relative">
           <label
             htmlFor="name"
-            className="block mb-2 text-lg font-semibold text-white"
+            className="block mb-2 text-lg font-semibold text-white lg:text-2xl lg:font-normal"
           >
             {t("form.name")}
           </label>
           <input
             type="text"
             id="name"
-            className="bg-green-50 border border-green-500 text-green-900 placeholder-green-400 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
+            className="bg-green-50 border border-green-500 text-green-900 placeholder-green-400 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 lg:text-xl"
             placeholder="Jane Doe"
             {...register("name", { required: true })}
           />
           {errors.name && (
-            <span className="absolute text-red-200 font-bold mt-1">
+            <span className="absolute text-red-200 font-bold mt-1 lg:text-lg">
               {errors.name.message + ""}
             </span>
           )}
@@ -130,19 +130,19 @@ const MyComponent: FC<Props> = () => {
         <div>
           <label
             htmlFor="email"
-            className="block mb-2 text-lg font-semibold text-white"
+            className="block mb-2 text-lg font-semibold text-white lg:text-2xl lg:font-normal"
           >
             {t("form.email")}
           </label>
           <input
             type="email"
             id="email"
-            className="bg-red-50 border border-red-500 text-red-900 placeholder-green-400 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5"
+            className="bg-red-50 border border-red-500 text-red-900 placeholder-green-400 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 lg:text-lg"
             placeholder="example@mail.com"
             {...register("email", { required: true })}
           />
           {errors.email && (
-            <span className="absolute text-red-200 font-bold mt-1">
+            <span className="absolute text-red-200 font-bold mt-1 lg:text-lg">
               {errors.email.message + ""}
             </span>
           )}
@@ -150,13 +150,13 @@ const MyComponent: FC<Props> = () => {
         <div>
           <label
             htmlFor="message"
-            className="block mb-2 text-lg font-semibold text-white"
+            className="block mb-2 text-lg font-semibold text-white lg:text-2xl lg:font-normal"
           >
             {t("form.idea")}
           </label>
           <textarea
             id="message"
-            className="bg-red-50 h-32 border border-red-500 text-red-900 placeholder-green-400 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5"
+            className="bg-red-50 h-32 border border-red-500 text-red-900 placeholder-green-400 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 lg:text-lg"
             placeholder="Leave a message..."
             {...register("message", { required: true })}
           ></textarea>
