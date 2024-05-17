@@ -5,8 +5,6 @@ import NavList from "./NavList.astro";
 import LanguageSelector from "./LanguageSelector.astro";
 import MenuButton from "./MenuButton.astro";
 
-let isMobile = true;
-
 const menuItems = [
   { name: "Home", href: "#home" },
   { name: "Experience", href: "#experience" },
@@ -17,12 +15,14 @@ const menuItems = [
 ---
 
 <nav
-  class="flex flex-row w-full max-w-5xl items-center justify-between p-4 bg-white shadow-lg fixed z-40 top-0 start-0 border-b border-gray-200 md:min-h-20"
+  class="flex flex-row w-full max-w-5xl lg:max-w-full items-center p-4 bg-white justify-center shadow-lg fixed z-40 top-0 start-0 border-b border-gray-200 md:min-h-20"
 >
-<Icon name="portfolio-logo" class="w-20 h-auto md:w-28"></Icon>
-  {!isMobile && <NavList items={menuItems} />}
-  <div class="flex flex-row items-center space-x-3">
-    <LanguageSelector />
-    <MenuButton items={menuItems} />
+  <div class="flex flex-row w-full items-center justify-between max-w-4xl">
+    <Icon name="portfolio-logo" class="w-20 h-auto md:w-28" />
+    <NavList items={menuItems} />
+    <div class="flex flex-row items-center space-x-3">
+      <LanguageSelector />
+      <MenuButton items={menuItems} />
+    </div>
   </div>
 </nav>
