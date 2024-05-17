@@ -137,7 +137,7 @@ const MyComponent: FC<Props> = () => {
           <input
             type="email"
             id="email"
-            className="bg-red-50 border border-red-500 text-red-900 placeholder-green-400 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 lg:text-lg"
+            className="bg-red-50 border border-red-500 text-red-900 placeholder-green-400 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 lg:text-xl"
             placeholder="example@mail.com"
             {...register("email", { required: true })}
           />
@@ -156,7 +156,7 @@ const MyComponent: FC<Props> = () => {
           </label>
           <textarea
             id="message"
-            className="bg-red-50 h-32 border border-red-500 text-red-900 placeholder-green-400 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 lg:text-lg"
+            className="bg-red-50 h-32 border border-red-500 text-red-900 placeholder-green-400 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 lg:text-xl"
             placeholder="Leave a message..."
             {...register("message", { required: true })}
           ></textarea>
