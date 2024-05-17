@@ -13,8 +13,8 @@ function handleScroll() {
   const scrollPosition = window.scrollY || document.documentElement.scrollTop;
 
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.offsetHeight;
+    const sectionTop = section.offsetTop - 300;
+    const sectionHeight = section.offsetHeight + 300;
 
     if (
       scrollPosition >= sectionTop &&
