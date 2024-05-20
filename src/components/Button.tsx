@@ -6,7 +6,14 @@ interface Props extends HTMLAttributes<HTMLButtonElement> {
   loading?: boolean;
   variant?: "primary" | "secondary" | "accent";
   type?: "button" | "submit" | "reset";
+  url?: string;
   className?: string;
+  download?: boolean;
+}
+
+interface ContentProps {
+  loading: boolean;
+  children: ReactNode | string;
 }
 
 function classNames(...classes: Array<string>) {
@@ -19,6 +26,16 @@ const classes = {
   accent: "bg-accent border-accent text-white",
 };
 
+const genericClass =
+  "px-8 py-3 border-2 rounded-xl font-semibold text-2xl inline-flex w-auto min-w-52 justify-center items-center min-h-16 lg:font-normal";
+
+const ButtonContent: FC<ContentProps> = ({ loading, children }) =>
+  loading ? (
+    <img className="stroke-white animate-spin" src={spinnerIcon.src}></img>
+  ) : (
+    children
+  );
+
 const Button: FC<Props> = ({
   children,
   id,
@@ -26,23 +43,37 @@ const Button: FC<Props> = ({
   variant = "primary",
   loading = false,
   className = "",
+  download = true,
+  url,
 }) => {
+  if (!!url)
+    return (
+      <a
+        id={id}
+        download={download}
+        className={classNames(
+          genericClass,
+          classes[variant],
+          loading ? "cursor-not-allowed" : "cursor-pointer",
+          className,
+        )}
+        href={url}
+      >
+        <ButtonContent loading={loading} children={children} />
+      </a>
+    );
   return (
     <button
       id={id}
       type={type}
       className={classNames(
-        "px-8 py-3 border-2 rounded-xl font-semibold text-2xl inline-flex w-auto min-w-52 justify-center items-center min-h-16 lg:font-normal",
+        genericClass,
         classes[variant],
         loading ? "cursor-not-allowed" : "cursor-pointer",
         className,
       )}
     >
-      {loading ? (
-        <img className="stroke-white animate-spin" src={spinnerIcon.src}></img>
-      ) : (
-        children
-      )}
+      <ButtonContent loading={loading} children={children} />
     </button>
   );
 };
