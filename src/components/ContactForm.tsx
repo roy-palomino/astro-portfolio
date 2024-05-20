@@ -95,7 +95,6 @@ const MyComponent: FC<Props> = () => {
   };
 
   useEffect(() => {
-    if (window.location) console.log(window.location.toString());
     const urlLang = getLangFromUrl(new URL(window.location.toString()));
     setLang(urlLang);
   }, [window]);
