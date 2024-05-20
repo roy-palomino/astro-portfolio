@@ -1,8 +1,11 @@
 ---
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import Button from "../components/Button";
+
+import devAvatar from "../images/dev-avatar.png";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -13,21 +16,35 @@ const t = useTranslations(lang);
     <div
       class="flex flex-col items-center space-y-8 lg:max-w-4xl lg:w-full lg:justify-around lg:flex-row lg:space-y-0 lg:space-x-14 lg:mb-8 lg:px-10"
     >
-      <div class="flex flex-col items-center space-y-2 lg:items-start lg:space-y-4">
+      <div
+        class="flex flex-col items-center space-y-2 lg:items-start lg:space-y-4"
+      >
         <span
           class="text-lg font-semibold text-slate-400 lg:text-2xl lg:font-thin"
           >{t("hero.hello")}</span
         >
-        <h1 class="text-5xl font-bold text-primary lg:text-7xl lg:-ml-1">Roy Palomino</h1>
+        <h1 class="text-5xl font-bold text-primary lg:text-7xl lg:-ml-1">
+          Roy Palomino
+        </h1>
         <p class="text-4xl font-extrabold text-secondary lg:text-6xl">
           {t("hero.webDev")}
         </p>
       </div>
-      <Icon class="size-52 lg:size-64" name="avatar" />
+      <!-- <Icon class="size-52 lg:size-64" name="avatar" /> -->
+      <Image
+        class="size-52 lg:size-64 rounded-full"
+        alt="web dev avatar"
+        src={devAvatar}
+      />
     </div>
-    <div class="flex flex-col items-center space-y-8 w-full my-10 lg:my-0 lg:space-y-4">
-      <Icon class="w-80 h-auto lg:w-full lg:max-w-3xl lg:px-6 lg:mb-8" name="devices" />
-      <Button variant="accent">
+    <div
+      class="flex flex-col items-center space-y-8 w-full my-10 lg:my-0 lg:space-y-4"
+    >
+      <Icon
+        class="w-80 h-auto lg:w-full lg:max-w-3xl lg:px-6 lg:mb-8"
+        name="devices"
+      />
+      <Button variant="accent" url={t("download.cv")} download={true}>
         {t("button.downloadCV")}
       </Button>
     </div>
