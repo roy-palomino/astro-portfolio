@@ -59,12 +59,17 @@ export const ui = {
       "This non-profit organization provides certified training courses and workshops, promoting personal and professional growth for attendees. A space to develop women's skills.",
     "quilla.description":
       "Offers a solid theoretical and practical training to future extrajudicial conciliators. Its team of qualified professionals imparts the teachings with proactivity, optimism, and commitment, guaranteeing quality training for students.",
+    "inciforc.description":
+      "Inciforc offers comprehensive training in various forensic disciplines to prevent crime and enhance public safety through tailored criminal policies.",
     "gal.description":
-      "This group aimed to create a space dedicated to ensuring access to justice for all citizens. They provide effective defense, informing clients about the real possibilities of each case. In addition to legal advisory services, they offer specialized training programs.",
+      "GAL, established in 2015, provides effective legal defense and academic consulting, ensuring access to justice through strategic litigation and excellence in service",
+    "equilibrium.description":
+      "Equilibrium conducts multidisciplinary research and academic events to promote a modern, efficient, and sustainable society in harmony with the environment.",
     "miscellaneous.goToTop": "Go to top",
     "miscellaneous.copyright": "Almost all rights reserved.",
     "miscellaneous.showMore": "Show more",
-    "miscellaneous.thanksForContact": "Thanks for contacting me! I will get back to you soon.",
+    "miscellaneous.thanksForContact":
+      "Thanks for contacting me! I will get back to you soon.",
     "miscellaneous.required": "This field is required.",
     "miscellaneous.shouldBeEmail": "This field should be a valid email.",
     "miscellaneous.visitPage": "Visit page",
@@ -75,6 +80,7 @@ export const ui = {
     "form.name": "Your name",
     "form.email": "Your email",
     "form.idea": "Your idea",
+    "download.cv": "/assets/cv_en.pdf",
   },
   es: {
     "nav.home": "Inicio",
@@ -128,12 +134,17 @@ export const ui = {
       "ONG que brinda capacitaciones y talleres con certificación, fomentando el desarrollo personal y profesional de las asistentes. Un espacio de aprendizaje y crecimiento enfocado en potenciar las habilidades femeninas.",
     "quilla.description":
       "Ofrece una sólida formación teórica y práctica a futuros conciliadores extrajudiciales. Su equipo calificado imparte las enseñanzas con proactividad, optimismo y compromiso, garantizando una capacitación de calidad a sus estudiantes.",
+    "inciforc.description":
+      "Ofrece formación integral en diversas disciplinas forenses para prevenir el delito y mejorar la seguridad pública a través de políticas criminales adaptadas.",
     "gal.description":
-      "Este grupo se propuso crear un espacio dedicado a garantizar el acceso a la justicia para todos los ciudadanos.Realizan una defensa efectiva, informando a los usuarios sobre las posibilidades reales de cada caso. Además de la asesoría legal, brindan capacitaciones especializadas.",
+      "GAL, fundado en 2015, brinda defensa legal efectiva y consultoría académica, garantizando el acceso a la justicia a través de litigios estratégicos y excelencia en el servicio.",
+    "equilibrium.description":
+      "Equilibrium realiza investigaciones multidisciplinarias y eventos académicos para promover una sociedad moderna, eficiente y sostenible en armonía con el medio ambiente.",
     "miscellaneous.goToTop": "Volver al inicio",
     "miscellaneous.copyright": "Casi todos los derechos reservados.",
     "miscellaneous.showMore": "Mostrar más",
-    "miscellaneous.thanksForContact": "¡Gracias por contactarme! Te responderé pronto.",
+    "miscellaneous.thanksForContact":
+      "¡Gracias por contactarme! Te responderé pronto.",
     "miscellaneous.required": "Este campo es requerido.",
     "miscellaneous.shouldBeEmail": "Este campo debería ser un email válido.",
     "miscellaneous.visitPage": "Visitar página",
@@ -144,5 +155,6 @@ export const ui = {
     "form.name": "Tu nombre",
     "form.email": "Tu email",
     "form.idea": "Tu idea",
+    "download.cv": "/assets/cv_es.pdf",
   },
 } as const;
