@@ -4,13 +4,14 @@ import { useEffect, useState } from "react";
 interface Props {
   message: string;
   delayInSeconds: string | number;
+  key?: number;
 }
 
 function classNames(...classes: Array<string>) {
   return classes.filter(Boolean).join(" ");
 }
 
-const MyComponent: FC<Props> = ({ message, delayInSeconds }) => {
+const MyComponent: FC<Props> = ({ message, delayInSeconds, key = 0 }) => {
   const [showToast, setShowToast] = useState<boolean>(false);
 
   useEffect(() => {
@@ -23,8 +24,9 @@ const MyComponent: FC<Props> = ({ message, delayInSeconds }) => {
   return (
     <div
       id="toast-default"
+      key={key}
       className={classNames(
-        "flex items-center w-full max-w-xs p-4 text-smoke primary-gradient rounded-lg shadow fixed top-20 right-5 transition-opacity duration-500",
+        "flex items-center w-full max-w-xs p-5 text-smoke primary-gradient text-lg rounded-lg shadow fixed top-20 right-5 transition-opacity duration-500 z-50",
         showToast ? "opacity-100" : "opacity-0",
       )}
       role="alert"
