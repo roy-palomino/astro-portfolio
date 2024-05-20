@@ -17,14 +17,14 @@ const { experienceList } = Astro.props;
           <h3 class="text-2xl text-primary font-bold md:text-3xl">
             {experience.company}
           </h3>
-          <time class="text-lg font-normal leading-none text-slate-500 md:text-xl lg:text-slate-400">
+          <time class="text-lg font-normal leading-none text-slate-500 lg:text-gray-400">
             {experience.year}
           </time>
         </div>
-        <p class="text-xl font-bold text-secondary-hover mb-3 lg:text-2xl lg:font-normal -mt-1">
+        <p class="text-xl font-bold text-secondary-hover mb-3 lg:font-normal -mt-1">
           {experience.role}
         </p>
-        <ul class="font-normal text-lg md:text-xl">
+        <ul class="font-normal text-lg">
           {experience.tasks.map((task) => (
             <li class="list-disc ml-4 text-slate-600 lg:text-slate-500 lg:ml-6">{task}</li>
           ))}
