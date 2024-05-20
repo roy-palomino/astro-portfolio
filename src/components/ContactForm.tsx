@@ -22,6 +22,9 @@ const MyComponent: FC<Props> = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [lang, setLang] = useState<"en" | "es">("en");
   const [showToast, setShowToast] = useState<boolean>(false);
+  const [toastKey, setToastKey] = useState<number>(0);
+
+  const toastDelay = 4;
 
   const t = useTranslations(lang);
 
@@ -49,10 +52,6 @@ const MyComponent: FC<Props> = () => {
     const templateId = import.meta.env.PUBLIC_TEMPLATE_ID;
     const userId = import.meta.env.PUBLIC_USER_ID;
 
-    console.log(serviceId, templateId, userId);
-
-    console.log(data);
-
     let payload = {
       service_id: serviceId,
       template_id: templateId,
@@ -77,9 +76,16 @@ const MyComponent: FC<Props> = () => {
       );
 
       if (response.ok) {
+        setToastKey(toastKey + 1);
         setShowToast(true);
         reset();
         clearErrors();
+        setTimeout(
+          () => {
+            setShowToast(false);
+          },
+          toastDelay * 1000 + 500,
+        );
       }
     } catch (error) {
       console.error("Error:", error);
@@ -98,8 +104,9 @@ const MyComponent: FC<Props> = () => {
     <>
       {showToast && (
         <Toast
+          key={0}
           message={t("miscellaneous.thanksForContact")}
-          delayInSeconds={3}
+          delayInSeconds={toastDelay}
         />
       )}
       <form
@@ -168,7 +175,9 @@ const MyComponent: FC<Props> = () => {
           </p>
         </div>
         <div className="flex flex-row w-full justify-center">
-          <Button className="md:mt-2" loading={loading}>{t("title.contact")}</Button>
+          <Button className="md:mt-2" loading={loading}>
+            {t("title.contact")}
+          </Button>
         </div>
       </form>
     </>
