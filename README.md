@@ -44,7 +44,7 @@ Web portfolio designed in [Figma](https://www.figma.com) and built from scratch 
 
 ```
 
-## 🧞 Commands
+## i18n
 The project currently support two languages: English and Spanish
 ```text
 /
