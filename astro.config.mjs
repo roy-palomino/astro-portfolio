@@ -7,5 +7,7 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), icon(), react()],
-  output: "static"
+  output: "static",
+  site: 'https://roy-palomino.github.io',
+  base: '/astro-portfolio'
 });
