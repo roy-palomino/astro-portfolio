@@ -9,5 +9,4 @@ export default defineConfig({
   integrations: [tailwind(), icon(), react()],
   output: "static",
   site: 'https://roy-palomino.github.io',
-  base: '/astro-portfolio'
 });
